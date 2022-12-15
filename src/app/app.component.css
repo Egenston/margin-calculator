@@ -1,5 +1,5 @@
 :host{
-    @apply flex flex-col justify-center items-center h-screen w-screen bg-[url('/assets/images/TradingBG.jpg')] bg-cover bg-no-repeat bg-center;
+    @apply flex flex-col justify-center items-center h-screen w-screen bg-[url('assets/images/TradingBG.jpg')] bg-cover bg-no-repeat bg-center;
 }
 
 form {
