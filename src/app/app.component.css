@@ -1,0 +1,43 @@
+:host{
+    @apply flex flex-col justify-center items-center h-screen w-screen bg-[url('/assets/images/TradingBG.jpg')] bg-cover bg-no-repeat bg-center;
+}
+
+form {
+    @apply grid grid-cols-2 w-full max-w-[400px] p-12 text-lg text-neutral-100 gap-y-4;
+}
+
+.risk-fields{
+    @apply col-span-2 flex justify-start items-center relative;
+}
+
+.risk-amount{
+    @apply w-[calc(100%-30px)];
+}
+
+.risk-option{
+    @apply absolute w-[30px] right-0
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+mat-form-field {
+    @apply col-span-2;
+}
+
+button {
+    @apply col-span-2;
+}
+
+h1{
+    @apply text-xl text-neutral-100 col-span-2;
+}
