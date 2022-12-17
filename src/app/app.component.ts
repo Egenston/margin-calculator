@@ -8,6 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AppComponent {
   calculatedMargin: number = 0;
   potentialProfit: number = 0;
+  potentialLoss: number = 0;
   
   form = new FormGroup({
     riskAmount: new FormControl('', [Validators.required, Validators.min(0)]),
@@ -21,6 +22,9 @@ export class AppComponent {
 
   checkRiskOption = () => {
     let riskAmountControls = this.form.controls['riskAmount'];
+    this.calculatedMargin = 0;
+    this.potentialLoss = 0;
+    this.potentialProfit = 0;
     if (this.form.value.riskOption === "%") {
       riskAmountControls.addValidators(Validators.max(100));
       riskAmountControls.updateValueAndValidity();
@@ -43,6 +47,7 @@ export class AppComponent {
     let depositBalance: number = this.form.value.depositBalance;
     let riskAmountInPercentages: number = this.form.value.riskAmount;
     let riskAmount = (depositBalance * riskAmountInPercentages) / 100;
+    this.potentialLoss = riskAmount;
     this.calculateMargin(riskAmount);
   }
 

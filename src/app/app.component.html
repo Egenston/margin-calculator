@@ -73,5 +73,6 @@
   </mat-form-field>
   <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="displayMargin()">Calculate margin</button>
   <h1 *ngIf="calculatedMargin !== 0">Required margin: {{calculatedMargin | currency}}</h1>
+  <h1 *ngIf="form.value.riskOption === '%' && potentialLoss !== 0">Potential loss: {{potentialLoss | currency}}</h1>
   <h1 *ngIf="potentialProfit !== 0">Potential profit: {{potentialProfit | currency}}</h1>
 </form>
