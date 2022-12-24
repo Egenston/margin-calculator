@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" autocomplete="off">
   <div class="risk-fields">
     <!-- risk amount -->
     <mat-form-field class="risk-amount">
@@ -51,16 +51,6 @@
       Value can't be negative
     </mat-error>
   </mat-form-field>
-  <!-- Stop-loss -->
-  <mat-form-field class="col-span-2">
-    <mat-label>
-      Stop Loss
-    </mat-label>
-    <input type="number" matInput formControlName="stopLoss">
-    <mat-error *ngIf="form.get('stopLoss')?.hasError('min')">
-      Value can't be negative
-    </mat-error>
-  </mat-form-field>
   <!-- take profit -->
   <mat-form-field class="col-span-2">
     <mat-label>
@@ -68,6 +58,16 @@
     </mat-label>
     <input type="number" matInput formControlName="takeProfit">
     <mat-error *ngIf="form.get('takeProfit')?.hasError('min')">
+      Value can't be negative
+    </mat-error>
+  </mat-form-field>
+  <!-- Stop-loss -->
+  <mat-form-field class="col-span-2">
+    <mat-label>
+      Stop Loss
+    </mat-label>
+    <input type="number" matInput formControlName="stopLoss">
+    <mat-error *ngIf="form.get('stopLoss')?.hasError('min')">
       Value can't be negative
     </mat-error>
   </mat-form-field>
