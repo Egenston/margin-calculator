@@ -14,7 +14,7 @@ export class AppComponent {
     riskAmount: new FormControl('', [Validators.required, Validators.min(0)]),
     riskOption: new FormControl('%', [Validators.required, Validators.min(0)]),
     depositBalance: new FormControl('', [Validators.required, Validators.min(0)]),
-    creditLeverage: new FormControl('', [Validators.required, Validators.min(0)]),
+    creditLeverage: new FormControl('', [Validators.required, Validators.min(0), Validators.max(125)]),
     entryPoint: new FormControl('', [Validators.required, Validators.min(0)]),
     stopLoss: new FormControl('', [Validators.required, Validators.min(0)]),
     takeProfit: new FormControl('', [Validators.required, Validators.min(0)])

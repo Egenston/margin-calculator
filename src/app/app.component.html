@@ -40,6 +40,9 @@
     <mat-error *ngIf="form.get('creditLeverage')?.hasError('min')">
       Value can't be negative
     </mat-error>
+    <mat-error *ngIf="form.get('creditLeverage')?.hasError('max')">
+      Value can't be higher than 125
+    </mat-error>
   </mat-form-field>
   <!-- Entry point -->
   <mat-form-field class="col-span-2">
