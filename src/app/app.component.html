@@ -7,7 +7,7 @@
       </mat-label>
       <input type="number" matInput formControlName="riskAmount">
       <mat-error *ngIf="form.get('riskAmount')?.hasError('min')">
-        Value 
+        Value can't be negative
       </mat-error>
       <mat-error *ngIf="form.get('riskAmount')?.hasError('max')">
         Value can't be higher than 100
