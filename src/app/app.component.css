@@ -39,5 +39,9 @@ button {
 }
 
 h1{
-    @apply text-xl text-neutral-100 col-span-2;
+    @apply relative text-xl text-neutral-100 col-span-2;
+}
+
+.error-text{
+    @apply absolute text-[13.5px] -bottom-[20px]; 
 }

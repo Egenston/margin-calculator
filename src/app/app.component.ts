@@ -9,6 +9,7 @@ export class AppComponent {
   calculatedMargin: number = 0;
   potentialProfit: number = 0;
   potentialLoss: number = 0;
+  isMarginBiggerThanDeposit: boolean = false;
   
   form = new FormGroup({
     riskAmount: new FormControl('', [Validators.required, Validators.min(0)]),
@@ -59,6 +60,7 @@ export class AppComponent {
     let stopPriceMovement: number = parseFloat(((Math.abs(entryPoint - stopLoss) * 100) / entryPoint).toFixed(2));
     let profitPriceMovement: number = parseFloat(((Math.abs(entryPoint - takeProfit) * 100) / entryPoint).toFixed(2));
     this.calculatedMargin = (riskAmount * 100) / (stopPriceMovement * leverage);
+    this.isMarginBiggerThanDeposit = this.calculatedMargin > this.form.value.depositBalance;
     this.potentialProfit = (this.calculatedMargin * profitPriceMovement * leverage) / 100;
   }
 
