@@ -10,3 +10,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+.info-sheet {
+    max-width: 800px !important;
+    padding: 10px !important;
+}

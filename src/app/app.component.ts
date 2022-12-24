@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private _bottomSheet: MatBottomSheet) {}
+
   calculatedMargin: number = 0;
   potentialProfit: number = 0;
   potentialLoss: number = 0;
@@ -64,4 +68,22 @@ export class AppComponent {
     this.potentialProfit = (this.calculatedMargin * profitPriceMovement * leverage) / 100;
   }
 
+  openInfoBottomSheet(): void {
+    this._bottomSheet.open(InfoBottomSheet, { panelClass: 'info-sheet' });
+  }
+
+}
+
+@Component({
+  selector: 'info-bottom-sheet',
+  templateUrl: './info-bottom-sheet.html',
+  styleUrls: ['./info-bottom-sheet.css']
+})
+export class InfoBottomSheet {
+  constructor(private _bottomSheetRef: MatBottomSheetRef<InfoBottomSheet>) {}
+
+  openLink(event: MouseEvent): void {
+    this._bottomSheetRef.dismiss();
+    event.preventDefault();
+  }
 }
